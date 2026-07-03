@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Check, Star } from "lucide-react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
@@ -32,37 +33,57 @@ export function Tarifs() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {tarifs.map((t) => (
-                  <tr
-                    key={t.reparation}
-                    className={cn(
-                      "transition-colors hover:bg-brand-50/60",
-                      t.populaire && "bg-brand-50/40",
-                    )}
-                  >
-                    <td className="px-5 py-4 sm:px-7">
-                      <div className="flex items-center gap-2">
-                        <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand-100 text-brand-600">
-                          <Check className="size-3.5" strokeWidth={3} />
+                {tarifs.map((groupe) => (
+                  <Fragment key={groupe.categorie}>
+                    <tr className="bg-muted/50">
+                      <th
+                        scope="colgroup"
+                        colSpan={2}
+                        className="px-5 py-3 text-left sm:px-7"
+                      >
+                        <span className="font-heading text-sm font-bold uppercase tracking-wide text-brand-700">
+                          {groupe.categorie}
                         </span>
-                        <span className="font-semibold text-foreground">{t.reparation}</span>
-                        {t.populaire && (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-brand-600/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-brand-700">
-                            <Star className="size-3 fill-current" />
-                            Populaire
+                        {groupe.note && (
+                          <span className="ml-2 text-xs font-normal normal-case tracking-normal text-muted-foreground">
+                            {groupe.note}
                           </span>
                         )}
-                      </div>
-                      {t.detail && (
-                        <span className="mt-0.5 block pl-7 text-xs text-muted-foreground">
-                          {t.detail}
-                        </span>
-                      )}
-                    </td>
-                    <td className="whitespace-nowrap px-5 py-4 text-right font-heading text-base font-bold text-foreground sm:px-7">
-                      {t.prix}
-                    </td>
-                  </tr>
+                      </th>
+                    </tr>
+                    {groupe.lignes.map((t) => (
+                      <tr
+                        key={t.reparation}
+                        className={cn(
+                          "transition-colors hover:bg-brand-50/60",
+                          t.populaire && "bg-brand-50/40",
+                        )}
+                      >
+                        <td className="px-5 py-4 sm:px-7">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                              <Check className="size-3.5" strokeWidth={3} />
+                            </span>
+                            <span className="font-semibold text-foreground">{t.reparation}</span>
+                            {t.populaire && (
+                              <span className="inline-flex items-center gap-1 rounded-full bg-brand-600/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-brand-700">
+                                <Star className="size-3 fill-current" />
+                                Populaire
+                              </span>
+                            )}
+                          </div>
+                          {t.detail && (
+                            <span className="mt-0.5 block pl-7 text-xs text-muted-foreground">
+                              {t.detail}
+                            </span>
+                          )}
+                        </td>
+                        <td className="whitespace-nowrap px-5 py-4 text-right font-heading text-base font-bold text-foreground sm:px-7">
+                          {t.prix}
+                        </td>
+                      </tr>
+                    ))}
+                  </Fragment>
                 ))}
               </tbody>
             </table>

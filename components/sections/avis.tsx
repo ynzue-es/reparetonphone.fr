@@ -5,7 +5,7 @@ import { avis, notation } from "@/lib/config";
 
 function Stars({ note }: { note: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${note} sur 5`}>
+    <span className="inline-flex gap-0.5" role="img" aria-label={`${note} sur 5`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
@@ -14,7 +14,7 @@ function Stars({ note }: { note: number }) {
           }
         />
       ))}
-    </div>
+    </span>
   );
 }
 

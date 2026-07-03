@@ -34,18 +34,18 @@ export const site = {
 
   // ⚠️ REMPLACE par ton vrai numéro (format international pour tel: et WhatsApp)
   // Exemple : "+33612345678"
-  telephone: "+33600000000", // [À REMPLIR]
+  telephone: "+33609630523",
   // Version affichée (jolie)
-  telephoneAffiche: "06 00 00 00 00", // [À REMPLIR]
+  telephoneAffiche: "06 09 63 05 23",
 
   // Numéro WhatsApp au format international SANS le "+" ni espaces (ex : 33612345678)
-  whatsapp: "33600000000", // [À REMPLIR]
+  whatsapp: "33609630523",
 
   // Email de contact (optionnel — utilisé en repli pour le formulaire)
-  email: "contact@reparetonphone.fr", // [À REMPLIR]
+  email: "yannis.nzuepro@gmail.com",
 
   // Horaires (affichés dans la section contact + JSON-LD)
-  horaires: "Lun–Sam · 9h–19h", // [À REMPLIR]
+  horaires: "Lun–Dim · 9h–19h",
 } as const;
 
 /* ---------------------------------------------------------------------------
@@ -122,58 +122,81 @@ export const marques: string[] = [
 
 /* ---------------------------------------------------------------------------
  *  3. GRILLE DE TARIFS INDICATIVE
- *     👉 Remplace les prix [À REMPLIR] par tes tarifs réels.
+ *     👉 Prix « à partir de », pièce compatible/premium garantie.
+ *        Le prix exact dépend du modèle : devis gratuit avant intervention.
  * ------------------------------------------------------------------------- */
-export type Tarif = {
+export type TarifLigne = {
   reparation: string;
   detail?: string;
-  prix: string; // ex : "à partir de 49€"
+  prix: string; // ex : "dès 65€"
   populaire?: boolean; // met en avant la ligne
 };
 
-export const tarifs: Tarif[] = [
+export type TarifGroupe = {
+  categorie: string;
+  note?: string; // précision affichée à côté du titre de catégorie
+  lignes: TarifLigne[];
+};
+
+export const tarifs: TarifGroupe[] = [
   {
-    reparation: "Remplacement d'écran",
-    detail: "iPhone / Samsung / autres",
-    prix: "à partir de [À REMPLIR]€",
-    populaire: true,
+    categorie: "Écrans iPhone",
+    note: "Pièce compatible ou premium, garantie",
+    lignes: [
+      { reparation: "iPhone XR / 11", prix: "dès 65€", populaire: true },
+      { reparation: "iPhone 12 / 12 Pro / 13", prix: "dès 90€", populaire: true },
+      { reparation: "iPhone 13 Pro / 14 / 14 Pro", prix: "dès 120€" },
+      { reparation: "iPhone 15 / 15 Pro", prix: "dès 150€" },
+      { reparation: "iPhone 16 / 16 Pro", prix: "dès 180€" },
+    ],
   },
   {
-    reparation: "Remplacement de batterie",
-    detail: "Autonomie retrouvée",
-    prix: "à partir de [À REMPLIR]€",
-    populaire: true,
+    categorie: "Batteries iPhone",
+    note: "Autonomie retrouvée",
+    lignes: [
+      { reparation: "iPhone X à 11", prix: "dès 45€" },
+      { reparation: "iPhone 12 à 13", prix: "dès 55€" },
+      { reparation: "iPhone 14 à 16", prix: "dès 65€" },
+    ],
   },
   {
-    reparation: "Connecteur de charge",
-    prix: "à partir de [À REMPLIR]€",
+    categorie: "Samsung",
+    note: "Écrans AMOLED d'origine",
+    lignes: [
+      { reparation: "Écran Galaxy A (milieu de gamme)", prix: "dès 70€" },
+      { reparation: "Écran Galaxy S récents", prix: "dès 130€" },
+      { reparation: "Batterie Samsung", prix: "dès 50€" },
+    ],
   },
   {
-    reparation: "Vitre arrière",
-    prix: "à partir de [À REMPLIR]€",
-  },
-  {
-    reparation: "Module caméra",
-    prix: "à partir de [À REMPLIR]€",
-  },
-  {
-    reparation: "Boutons (power / volume)",
-    prix: "à partir de [À REMPLIR]€",
-  },
-  {
-    reparation: "Désoxydation / nettoyage",
-    prix: "à partir de [À REMPLIR]€",
-  },
-  {
-    reparation: "Diagnostic",
-    detail: "Offert avant réparation",
-    prix: "Gratuit",
+    categorie: "Autres réparations",
+    note: "Toutes marques",
+    lignes: [
+      { reparation: "Vitre arrière", prix: "dès 40€" },
+      { reparation: "Connecteur de charge", prix: "dès 45€" },
+      { reparation: "Caméra (avant / arrière)", prix: "dès 45€" },
+      { reparation: "Boutons (volume / power)", prix: "dès 40€" },
+      {
+        reparation: "Désoxydation",
+        detail: "Téléphone tombé dans l'eau · diagnostic offert",
+        prix: "dès 50€",
+      },
+      { reparation: "Diagnostic", detail: "Avant toute réparation", prix: "Gratuit" },
+    ],
   },
 ];
 
 /* ---------------------------------------------------------------------------
  *  4. ZONE DESSERVIE (SEO local)
  * ------------------------------------------------------------------------- */
+
+// Déplacement à domicile : gratuit près d'Oyonnax, puis participation aux
+// frais au km (carburant + assurance + usure du véhicule).
+export const deplacement = {
+  rayonGratuitKm: 15, // déplacement offert dans ce rayon autour d'Oyonnax
+  prixKm: 0.4, // €/km au-delà (aller-retour) — couvre essence, assurance, entretien
+};
+
 export const communes: string[] = [
   "Oyonnax",
   "Arbent",

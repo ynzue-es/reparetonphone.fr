@@ -1,7 +1,9 @@
-import { MapPin, Navigation } from "lucide-react";
+import { MapPin, Navigation, Car } from "lucide-react";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
-import { communes, site } from "@/lib/config";
+import { communes, deplacement, site } from "@/lib/config";
+
+const prixKmAffiche = deplacement.prixKm.toFixed(2).replace(".", ",");
 
 export function Zone() {
   return (
@@ -36,7 +38,17 @@ export function Zone() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-center text-sm text-muted-foreground">
+            <div className="mt-8 flex items-start justify-center gap-3 rounded-2xl border border-brand-100 bg-brand-50/50 px-5 py-4 text-left">
+              <Car className="mt-0.5 size-5 shrink-0 text-brand-600" />
+              <p className="text-sm text-foreground">
+                <span className="font-semibold">Déplacement à domicile offert</span> dans un rayon
+                de {deplacement.rayonGratuitKm} km autour d&apos;{site.ville}. Au-delà,{" "}
+                {prixKmAffiche} €/km (aller-retour) pour couvrir le carburant et les frais du
+                véhicule — annoncé à l&apos;avance, jamais de surprise.
+              </p>
+            </div>
+
+            <p className="mt-6 text-center text-sm text-muted-foreground">
               Votre commune n&apos;est pas dans la liste&nbsp;? Elle est sûrement dans ma zone —{" "}
               <span className="font-medium text-foreground">appelez pour vérifier</span>, c&apos;est sans engagement.
             </p>
