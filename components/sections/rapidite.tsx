@@ -1,4 +1,4 @@
-import { Zap } from "lucide-react";
+import { LightningIcon } from "@phosphor-icons/react/dist/ssr";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
 import { delais } from "@/lib/config";
@@ -22,7 +22,7 @@ export function Rapidite() {
             <Reveal key={d.titre} delay={i * 90}>
               <div className="relative h-full overflow-hidden rounded-2xl border border-border bg-card p-7 text-center shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <span className="mx-auto inline-flex size-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
-                  <Zap className="size-6" />
+                  <LightningIcon className="size-6" />
                 </span>
                 <p className="mt-5 font-heading text-3xl font-extrabold text-gradient">
                   {d.valeur}

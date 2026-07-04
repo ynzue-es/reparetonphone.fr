@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- *  ARTICLES / CONSEILS — Contenu éditorial pour le référencement (SEO)
+ *  ARTICLES / CONSEILS · Contenu éditorial pour le référencement (SEO)
  * ============================================================================
  *  Chaque article devient une page /conseils/[slug], indexée par Google.
  *  Tu peux modifier, ajouter ou supprimer des articles ici librement.
@@ -157,7 +157,7 @@ export const articles: Article[] = [
       {
         type: "p",
         texte:
-          "Un téléphone dans l'eau, c'est la panique. Pourtant, ce sont les premières minutes qui comptent le plus. Voici les réflexes à adopter pour maximiser vos chances — et les erreurs à ne surtout pas commettre.",
+          "Un téléphone dans l'eau, c'est la panique. Pourtant, ce sont les premières minutes qui comptent le plus. Voici les réflexes à adopter pour maximiser vos chances, et les erreurs à ne surtout pas commettre.",
       },
       { type: "h2", texte: "À faire tout de suite" },
       {

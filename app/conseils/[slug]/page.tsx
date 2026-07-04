@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Clock, Calendar, ArrowLeft } from "lucide-react";
+import { CaretRightIcon, ClockIcon, CalendarIcon, ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr";
 import { CallButton, WhatsAppButton } from "@/components/cta";
 import { getArticle, articles } from "@/lib/articles";
 import { site } from "@/lib/config";
@@ -79,29 +79,29 @@ export default async function ArticlePage({
       />
 
       {/* En-tête article */}
-      <header className="hero-surface relative overflow-hidden text-white">
-        <div className="dots pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      <header className="hero-surface relative overflow-hidden border-b border-border">
+        <div className="dots pointer-events-none absolute inset-0 opacity-60" aria-hidden />
         <div className="relative mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-16">
-          <nav className="flex flex-wrap items-center gap-1.5 text-sm text-white/60" aria-label="Fil d'ariane">
-            <Link href="/" className="hover:text-white">
+          <nav className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground" aria-label="Fil d'ariane">
+            <Link href="/" className="hover:text-foreground">
               Accueil
             </Link>
-            <ChevronRight className="size-4" />
-            <Link href="/conseils" className="hover:text-white">
+            <CaretRightIcon className="size-4" />
+            <Link href="/conseils" className="hover:text-foreground">
               Conseils
             </Link>
-            <ChevronRight className="size-4" />
-            <span className="text-white/90">{article.titre}</span>
+            <CaretRightIcon className="size-4" />
+            <span className="text-foreground">{article.titre}</span>
           </nav>
-          <h1 className="mt-5 font-heading text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+          <h1 className="mt-5 font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
             {article.titre}
           </h1>
-          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/70">
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
             <span className="inline-flex items-center gap-1.5">
-              <Calendar className="size-4" /> {article.dateAffiche}
+              <CalendarIcon className="size-4" /> {article.dateAffiche}
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Clock className="size-4" /> {article.lecture} de lecture
+              <ClockIcon className="size-4" /> {article.lecture} de lecture
             </span>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default async function ArticlePage({
             href="/conseils"
             className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700"
           >
-            <ArrowLeft className="size-4" />
+            <ArrowLeftIcon className="size-4" />
             Retour aux conseils
           </Link>
         </div>

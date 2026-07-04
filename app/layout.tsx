@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const title = `Réparation téléphone Oyonnax (Haut-Bugey) — ${site.name}`;
+const title = `Réparation téléphone Oyonnax (Haut-Bugey) · ${site.name}`;
 const description =
   "Réparation de téléphone à Oyonnax et dans le Haut-Bugey : écran cassé, batterie, connecteur de charge… iPhone, Samsung et toutes marques. Déplacement à domicile, réparation rapide dans la journée. Devis gratuit.";
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: title,
-    template: `%s — ${site.name}`,
+    template: `%s · ${site.name}`,
   },
   description,
   keywords: [

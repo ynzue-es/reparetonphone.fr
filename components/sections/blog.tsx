@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRightIcon, ClockIcon } from "@phosphor-icons/react/dist/ssr";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
 import { articles } from "@/lib/articles";
@@ -16,7 +16,7 @@ export function ArticleCard({
     <Reveal delay={delay} className="group h-full">
       <Link
         href={`/conseils/${article.slug}`}
-        className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-transform duration-300 will-change-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10"
+        className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-transform duration-300 will-change-transform hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-900/10"
       >
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
@@ -29,7 +29,7 @@ export function ArticleCard({
         </div>
         <div className="flex flex-1 flex-col p-5">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-            <Clock className="size-3.5" />
+            <ClockIcon className="size-3.5" />
             {article.lecture} de lecture · {article.dateAffiche}
           </span>
           <h3 className="mt-2 font-heading text-lg font-bold leading-snug text-foreground group-hover:text-brand-700">
@@ -40,7 +40,7 @@ export function ArticleCard({
           </p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600">
             Lire l&apos;article
-            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRightIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
         </div>
       </Link>
@@ -70,7 +70,7 @@ export function Blog() {
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:border-brand-200"
           >
             Tous les conseils
-            <ArrowRight className="size-4" />
+            <ArrowRightIcon className="size-4" />
           </Link>
         </Reveal>
       </div>

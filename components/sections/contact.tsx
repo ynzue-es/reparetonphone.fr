@@ -1,4 +1,4 @@
-import { Phone, Clock, MapPin, Mail } from "lucide-react";
+import { PhoneIcon, ClockIcon, MapPinIcon, EnvelopeIcon } from "@phosphor-icons/react/dist/ssr";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/sections/contact-form";
@@ -23,7 +23,7 @@ export function Contact() {
               className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg"
             >
               <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl bg-brand-gradient text-white shadow-md">
-                <Phone className="size-6" />
+                <PhoneIcon className="size-6" />
               </span>
               <span>
                 <span className="block text-sm text-muted-foreground">Appelez-moi</span>
@@ -50,14 +50,14 @@ export function Contact() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5">
-                <Clock className="mt-0.5 size-5 shrink-0 text-brand-600" />
+                <ClockIcon className="mt-0.5 size-5 shrink-0 text-brand-600" />
                 <span>
                   <span className="block text-sm text-muted-foreground">Horaires</span>
                   <span className="block font-semibold text-foreground">{site.horaires}</span>
                 </span>
               </div>
               <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5">
-                <MapPin className="mt-0.5 size-5 shrink-0 text-brand-600" />
+                <MapPinIcon className="mt-0.5 size-5 shrink-0 text-brand-600" />
                 <span>
                   <span className="block text-sm text-muted-foreground">Secteur</span>
                   <span className="block font-semibold text-foreground">
@@ -71,7 +71,7 @@ export function Contact() {
               href={links.email}
               className="flex items-center gap-3 rounded-2xl border border-border bg-card p-5 text-sm transition-colors hover:border-brand-200"
             >
-              <Mail className="size-5 shrink-0 text-brand-600" />
+              <EnvelopeIcon className="size-5 shrink-0 text-brand-600" />
               <span className="font-medium text-foreground">{site.email}</span>
             </a>
           </Reveal>

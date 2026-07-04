@@ -1,4 +1,4 @@
-import { site, communes, services, notation, avis } from "@/lib/config";
+import { site, communes, services } from "@/lib/config";
 
 /**
  * Données structurées Schema.org pour le référencement local (Google).
@@ -57,26 +57,9 @@ export function JsonLd() {
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
-        name: `${s.titre} — réparation téléphone ${site.ville}`,
+        name: `${s.titre} · réparation téléphone ${site.ville}`,
         description: s.description,
       },
-    })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: notation.moyenne,
-      reviewCount: notation.nombre,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    review: avis.map((a) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: a.nom },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: a.note,
-        bestRating: 5,
-      },
-      reviewBody: a.texte,
     })),
   };
 

@@ -1,26 +1,26 @@
 import Image from "next/image";
-import { ShieldCheck, MapPin, Wrench, HandHeart } from "lucide-react";
+import { ShieldCheckIcon, MapPinIcon, WrenchIcon, HandHeartIcon } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/reveal";
-import { site, notation } from "@/lib/config";
+import { site } from "@/lib/config";
 
 const points = [
   {
-    icon: Wrench,
+    icon: WrenchIcon,
     titre: "Pièces de qualité",
     texte: "Des composants soigneusement sélectionnés pour une réparation qui dure.",
   },
   {
-    icon: ShieldCheck,
+    icon: ShieldCheckIcon,
     titre: "Travail garanti",
     texte: "Réparation testée devant vous, avec garantie sur l'intervention.",
   },
   {
-    icon: MapPin,
+    icon: MapPinIcon,
     titre: "Réparateur local",
     texte: `Un interlocuteur unique et humain, basé à ${site.ville}, pas une enseigne anonyme.`,
   },
   {
-    icon: HandHeart,
+    icon: HandHeartIcon,
     titre: "Prix honnête",
     texte: "Devis gratuit et transparent, annoncé avant toute réparation.",
   },
@@ -44,10 +44,8 @@ export function APropos() {
           </div>
           {/* Carte stat flottante */}
           <div className="absolute -bottom-5 -right-3 rounded-2xl border border-border bg-card px-5 py-4 shadow-xl sm:-right-5">
-            <p className="font-heading text-3xl font-extrabold text-gradient">
-              {notation.nombre}+
-            </p>
-            <p className="text-sm font-medium text-muted-foreground">réparations réalisées</p>
+            <p className="font-heading text-3xl font-extrabold text-gradient">7j/7</p>
+            <p className="text-sm font-medium text-muted-foreground">à votre service</p>
           </div>
         </Reveal>
 

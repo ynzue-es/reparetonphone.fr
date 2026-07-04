@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Check, Star } from "lucide-react";
+import { CheckIcon, StarIcon } from "@phosphor-icons/react/dist/ssr";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/reveal";
 import { CallButton } from "@/components/cta";
@@ -17,7 +17,7 @@ export function Tarifs() {
         />
 
         <Reveal className="mt-12">
-          <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-brand-500/5">
+          <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-brand-900/5">
             <table className="w-full text-left">
               <caption className="sr-only">
                 Grille de tarifs indicative des réparations de téléphone
@@ -62,12 +62,12 @@ export function Tarifs() {
                         <td className="px-5 py-4 sm:px-7">
                           <div className="flex flex-wrap items-center gap-2">
                             <span className="inline-flex size-5 items-center justify-center rounded-full bg-brand-100 text-brand-600">
-                              <Check className="size-3.5" strokeWidth={3} />
+                              <CheckIcon className="size-3.5" weight="bold" />
                             </span>
                             <span className="font-semibold text-foreground">{t.reparation}</span>
                             {t.populaire && (
                               <span className="inline-flex items-center gap-1 rounded-full bg-brand-600/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wide text-brand-700">
-                                <Star className="size-3 fill-current" />
+                                <StarIcon className="size-3" weight="fill" />
                                 Populaire
                               </span>
                             )}

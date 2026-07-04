@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { CaretRightIcon } from "@phosphor-icons/react/dist/ssr";
 import { ArticleCard } from "@/components/sections/blog";
 import { CallButton, WhatsAppButton } from "@/components/cta";
 import { articles } from "@/lib/articles";
 import { site } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Conseils réparation téléphone à Oyonnax — guides pratiques",
+  title: "Conseils réparation téléphone à Oyonnax · guides pratiques",
   description:
     "Tous nos conseils pour réparer et entretenir votre téléphone à Oyonnax et dans le Haut-Bugey : écran cassé, batterie, téléphone dans l'eau… Guides pratiques par votre réparateur local.",
   alternates: { canonical: "/conseils" },
@@ -24,20 +24,20 @@ export default function ConseilsPage() {
   return (
     <>
       {/* En-tête */}
-      <section className="hero-surface relative overflow-hidden text-white">
-        <div className="dots pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+      <section className="hero-surface relative overflow-hidden border-b border-border">
+        <div className="dots pointer-events-none absolute inset-0 opacity-60" aria-hidden />
         <div className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 md:py-20">
-          <nav className="flex items-center gap-1.5 text-sm text-white/60" aria-label="Fil d'ariane">
-            <Link href="/" className="hover:text-white">
+          <nav className="flex items-center gap-1.5 text-sm text-muted-foreground" aria-label="Fil d'ariane">
+            <Link href="/" className="hover:text-foreground">
               Accueil
             </Link>
-            <ChevronRight className="size-4" />
-            <span className="text-white/90">Conseils</span>
+            <CaretRightIcon className="size-4" />
+            <span className="text-foreground">Conseils</span>
           </nav>
-          <h1 className="mt-5 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="mt-5 font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Conseils & astuces <span className="text-gradient">réparation téléphone</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/80">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Les guides pratiques de votre réparateur à {site.ville} et dans le {site.region}.
             Réagissez au bon moment et prolongez la vie de votre smartphone.
           </p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { PaperPlaneTiltIcon } from "@phosphor-icons/react/dist/ssr";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -20,10 +20,10 @@ export function ContactForm() {
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
   const message = `Bonjour, je souhaite faire réparer mon téléphone.
-- Nom : ${form.nom || "—"}
-- Téléphone : ${form.tel || "—"}
-- Modèle : ${form.modele || "—"}
-- Panne : ${form.panne || "—"}`;
+- Nom : ${form.nom || "à préciser"}
+- Téléphone : ${form.tel || "à préciser"}
+- Modèle : ${form.modele || "à préciser"}
+- Panne : ${form.panne || "à préciser"}`;
 
   const waHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
   const mailHref = `mailto:${site.email}?subject=${encodeURIComponent(
@@ -61,11 +61,11 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="group mt-6 flex w-full items-center justify-center gap-2.5 rounded-2xl bg-brand-gradient px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-500/25 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400/50"
+        className="group mt-6 flex w-full items-center justify-center gap-2.5 rounded-2xl bg-brand-gradient px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-brand-900/25 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400/50"
       >
         <WhatsAppIcon className="size-5" />
         Envoyer ma demande via WhatsApp
-        <Send className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+        <PaperPlaneTiltIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
       </button>
 
       <p className="mt-3 text-center text-xs text-muted-foreground">

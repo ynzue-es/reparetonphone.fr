@@ -1,23 +1,29 @@
 /**
  * ============================================================================
- *  CONFIGURATION DU SITE — Répare Ton Phone
+ *  CONFIGURATION DU SITE · Répare Ton Phone
  * ============================================================================
  *  👉 C'est ICI que tu modifies tout le contenu du site sans toucher au code.
- *     Remplace les [À REMPLIR] par tes vraies infos (prix, téléphone, avis...).
+ *     Tout le contenu (prix, téléphone, engagements...) se règle ici.
  * ============================================================================
  */
 
-import type { LucideIcon } from "lucide-react";
+import type { Icon } from "@phosphor-icons/react/dist/lib/types";
 import {
-  Smartphone,
-  BatteryCharging,
-  Cable,
-  Camera,
-  Layers,
-  ToggleRight,
-  Droplets,
-  Wrench,
-} from "lucide-react";
+  DeviceMobileIcon,
+  BatteryChargingIcon,
+  PlugIcon,
+  CameraIcon,
+  StackIcon,
+  ToggleRightIcon,
+  DropIcon,
+  WrenchIcon,
+  FileTextIcon,
+  ShieldCheckIcon,
+  WalletIcon,
+  HouseIcon,
+  CpuIcon,
+  CalendarCheckIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 /* ---------------------------------------------------------------------------
  *  1. INFOS GÉNÉRALES / CONTACT
@@ -41,7 +47,7 @@ export const site = {
   // Numéro WhatsApp au format international SANS le "+" ni espaces (ex : 33612345678)
   whatsapp: "33609630523",
 
-  // Email de contact (optionnel — utilisé en repli pour le formulaire)
+  // Email de contact (optionnel, utilisé en repli pour le formulaire)
   email: "yannis.nzuepro@gmail.com",
 
   // Horaires (affichés dans la section contact + JSON-LD)
@@ -52,56 +58,56 @@ export const site = {
  *  2. CE QUE JE RÉPARE (grille de services)
  * ------------------------------------------------------------------------- */
 export type Service = {
-  icon: LucideIcon;
+  icon: Icon;
   titre: string;
   description: string;
 };
 
 export const services: Service[] = [
   {
-    icon: Smartphone,
+    icon: DeviceMobileIcon,
     titre: "Écran cassé",
     description:
       "Vitre fissurée, tactile qui ne répond plus, affichage KO : remplacement d'écran iPhone, Samsung et autres marques.",
   },
   {
-    icon: BatteryCharging,
+    icon: BatteryChargingIcon,
     titre: "Batterie",
     description:
       "Autonomie en chute libre ou extinctions soudaines ? On remplace la batterie pour lui redonner une seconde jeunesse.",
   },
   {
-    icon: Cable,
+    icon: PlugIcon,
     titre: "Connecteur de charge",
     description:
       "Le téléphone ne charge plus ou par intermittence : nettoyage ou remplacement du connecteur de charge.",
   },
   {
-    icon: Layers,
+    icon: StackIcon,
     titre: "Vitre arrière",
     description:
       "Face arrière brisée : on remplace la vitre pour retrouver un téléphone comme neuf.",
   },
   {
-    icon: Camera,
+    icon: CameraIcon,
     titre: "Caméra / photo",
     description:
       "Photos floues, objectif rayé ou caméra qui ne s'ouvre plus : réparation du module caméra avant ou arrière.",
   },
   {
-    icon: ToggleRight,
+    icon: ToggleRightIcon,
     titre: "Boutons",
     description:
       "Bouton power, volume ou home capricieux : on remet vos boutons en état de marche.",
   },
   {
-    icon: Droplets,
+    icon: DropIcon,
     titre: "Désoxydation",
     description:
       "Téléphone tombé dans l'eau ? Intervention rapide de nettoyage pour maximiser les chances de récupération.",
   },
   {
-    icon: Wrench,
+    icon: WrenchIcon,
     titre: "Diagnostic & autres pannes",
     description:
       "Un souci qui n'est pas dans la liste ? Diagnostic offert et devis clair avant toute réparation.",
@@ -190,11 +196,10 @@ export const tarifs: TarifGroupe[] = [
  *  4. ZONE DESSERVIE (SEO local)
  * ------------------------------------------------------------------------- */
 
-// Déplacement à domicile : gratuit près d'Oyonnax, puis participation aux
-// frais au km (carburant + assurance + usure du véhicule).
+// Déplacement à domicile : gratuit près d'Oyonnax, puis forfait fixe au-delà.
 export const deplacement = {
   rayonGratuitKm: 15, // déplacement offert dans ce rayon autour d'Oyonnax
-  prixKm: 0.4, // €/km au-delà (aller-retour) — couvre essence, assurance, entretien
+  forfaitAuDela: 10, // forfait fixe en € au-delà du rayon gratuit
 };
 
 export const communes: string[] = [
@@ -213,45 +218,47 @@ export const communes: string[] = [
 ];
 
 /* ---------------------------------------------------------------------------
- *  5. AVIS / TÉMOIGNAGES
- *     👉 Remplace par tes vrais avis clients.
+ *  5. MES ENGAGEMENTS (ce sur quoi tu t'engages auprès du client)
+ *     👉 Des promesses concrètes et honnêtes, à tenir à chaque intervention.
  * ------------------------------------------------------------------------- */
-export type Avis = {
-  nom: string;
-  ville: string;
-  note: number; // sur 5
+export type Engagement = {
+  icon: Icon;
+  titre: string;
   texte: string;
 };
 
-export const avis: Avis[] = [
+export const engagements: Engagement[] = [
   {
-    nom: "[À REMPLIR — Prénom]",
-    ville: "Oyonnax",
-    note: 5,
-    texte:
-      "[À REMPLIR] Exemple : écran d'iPhone changé en 30 minutes, il est passé le chercher au boulot et me l'a ramené réparé le soir même. Service top !",
+    icon: FileTextIcon,
+    titre: "Devis gratuit et sans engagement",
+    texte: "Diagnostic offert et prix annoncé à l'avance. Vous décidez en toute connaissance de cause.",
   },
   {
-    nom: "[À REMPLIR — Prénom]",
-    ville: "Bellignat",
-    note: 5,
-    texte:
-      "[À REMPLIR] Exemple : batterie de mon Samsung remplacée à domicile, rapide, propre et moins cher qu'en boutique. Je recommande.",
+    icon: ShieldCheckIcon,
+    titre: "Réparation garantie",
+    texte: "Intervention testée devant vous et garantie. Si quelque chose ne va pas, je reprends l'appareil.",
   },
   {
-    nom: "[À REMPLIR — Prénom]",
-    ville: "Arbent",
-    note: 5,
-    texte:
-      "[À REMPLIR] Exemple : très arrangeant, ponctuel et de bon conseil. Ça fait du bien d'avoir un réparateur de confiance dans le coin.",
+    icon: WalletIcon,
+    titre: "Vous payez une fois satisfait",
+    texte: "Le règlement se fait après la réparation, quand le téléphone remarche sous vos yeux.",
+  },
+  {
+    icon: HouseIcon,
+    titre: "Déplacement à domicile",
+    texte: `Offert dans un rayon de ${deplacement.rayonGratuitKm} km autour d'${site.ville}. Je viens à vous, vous ne perdez pas de temps.`,
+  },
+  {
+    icon: CpuIcon,
+    titre: "Pièces de qualité",
+    texte: "Des composants compatibles ou premium soigneusement sélectionnés, pour une réparation qui dure.",
+  },
+  {
+    icon: CalendarCheckIcon,
+    titre: "Disponible 7j/7",
+    texte: `Joignable ${site.horaires.toLowerCase()}, en semaine comme le week-end, pour dépanner vite.`,
   },
 ];
-
-// Note moyenne affichée + utilisée dans le JSON-LD (mets tes vrais chiffres)
-export const notation = {
-  moyenne: 5, // [À REMPLIR]
-  nombre: 27, // [À REMPLIR] nombre d'avis
-};
 
 /* ---------------------------------------------------------------------------
  *  6. ARGUMENTS / DÉLAIS
@@ -275,7 +282,7 @@ export const delais = [
 ];
 
 /* ---------------------------------------------------------------------------
- *  7. LIENS PRÉ-CONSTRUITS (ne pas modifier — dérivés de la config)
+ *  7. LIENS PRÉ-CONSTRUITS (ne pas modifier, dérivés de la config)
  * ------------------------------------------------------------------------- */
 export const links = {
   tel: `tel:${site.telephone.replace(/\s/g, "")}`,

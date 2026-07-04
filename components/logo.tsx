@@ -2,7 +2,7 @@ import { site } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
 /**
- * Logo "Répare Ton Phone" — 100% SVG inline, aucune image externe.
+ * Logo "Répare Ton Phone", 100% SVG inline, aucune image externe.
  * Smartphone stylisé dont l'écran forme un éclair (rapidité) + coche (fiabilité).
  */
 export function LogoMark({

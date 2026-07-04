@@ -8,7 +8,7 @@ import { Domicile } from "@/components/sections/domicile";
 import { Rapidite } from "@/components/sections/rapidite";
 import { Tarifs } from "@/components/sections/tarifs";
 import { Zone } from "@/components/sections/zone";
-import { Avis } from "@/components/sections/avis";
+import { Engagements } from "@/components/sections/engagements";
 import { Blog } from "@/components/sections/blog";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
@@ -26,7 +26,7 @@ export default function Home() {
         <Rapidite />
         <Tarifs />
         <Zone />
-        <Avis />
+        <Engagements />
         <Blog />
         <Contact />
       </main>

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/config";
 
-export const alt = `${site.name} — Réparation de téléphone à ${site.ville} (${site.region})`;
+export const alt = `${site.name} · Réparation de téléphone à ${site.ville} (${site.region})`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

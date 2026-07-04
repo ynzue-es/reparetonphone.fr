@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 import { links, site } from "@/lib/config";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +11,7 @@ export function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-/** Gros bouton d'appel — le CTA principal, présent partout. */
+/** Gros bouton d'appel, le CTA principal, présent partout. */
 export function CallButton({
   className,
   label = "Appeler maintenant",
@@ -26,14 +26,14 @@ export function CallButton({
       href={links.tel}
       className={cn(
         "group inline-flex items-center justify-center gap-2.5 rounded-2xl bg-brand-gradient px-6 py-3.5 text-base font-semibold text-white",
-        "shadow-lg shadow-brand-500/30 transition-transform duration-200 will-change-transform",
-        "hover:-translate-y-0.5 hover:shadow-xl hover:shadow-brand-500/40 active:translate-y-0",
-        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400/50",
+        "shadow-md shadow-brand-900/10 transition-transform duration-200 will-change-transform",
+        "hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-900/15 active:translate-y-0",
+        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-400/40",
         className,
       )}
       aria-label={`${label} au ${site.telephoneAffiche}`}
     >
-      <Phone className="size-5 transition-transform duration-300 group-hover:rotate-12" />
+      <PhoneIcon className="size-5 transition-transform duration-300 group-hover:rotate-12" />
       <span>{label}</span>
       {showNumber && (
         <span className="hidden font-semibold tabular-nums sm:inline">

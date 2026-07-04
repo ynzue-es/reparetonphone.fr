@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Phone } from "lucide-react";
+import { PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 import { WhatsAppIcon } from "@/components/cta";
 import { links, site } from "@/lib/config";
 import { cn } from "@/lib/utils";
@@ -30,10 +30,10 @@ export function FloatingCall() {
     >
       <a
         href={links.tel}
-        className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-gradient py-3 text-sm font-semibold text-white shadow-md shadow-brand-500/25"
+        className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-gradient py-3 text-sm font-semibold text-white shadow-md shadow-brand-900/25"
         aria-label={`Appeler le ${site.telephoneAffiche}`}
       >
-        <Phone className="size-4" />
+        <PhoneIcon className="size-4" />
         Appeler
       </a>
       <a
